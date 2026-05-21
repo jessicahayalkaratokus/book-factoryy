@@ -1,0 +1,26 @@
+import random
+
+
+class Book:
+    def __init__(self, title, author, year, genre):
+        self.title = title
+        self.author = author
+        self.year = year
+        self.genre = genre
+
+    def __str__(self):
+        return f"{self.title} by {self.author} ({self.year}) - {self.genre}"
+
+
+def generate_random_book():
+    return Book(
+        title=random.choice(["Book A", "Book B", "Book C"]),
+        author=random.choice(["Ali", "Ayşe", "Mehmet"]),
+        year=random.randint(1950, 2025),
+        genre=random.choice(["Fantasy", "Sci-Fi", "Drama"]),
+    )
+
+
+if __name__ == "__main__":
+    book = generate_random_book()
+    print(book)
